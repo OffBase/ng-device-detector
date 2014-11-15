@@ -63,8 +63,8 @@ angular.module("ng.deviceDetector",[])
           android:/\bAndroid\b/.test(ua),
           linux:/\bLinux\b/.test(ua),
           unix:/\bUNIX\b/.test(ua),
-          ps4:/\bPlaystation 4\b/.test(ua),
-          vita:/\bPlaystation Vita\b/.test(ua),
+          ps4:/\bMozilla\/5.0 \(PlayStation 4\b/.test(ua),
+          vita:/\bMozilla\/5.0 \(PlayStation Vita\b/.test(ua),
           firefoxos:/\bFirefox\b/.test(ua) && /\Mobile\b/.test(ua)
         },
         browser:{
@@ -80,8 +80,8 @@ angular.module("ng.deviceDetector",[])
           iphone:/\biPhone\b/.test(ua),
           ipod:/\biPod\b/.test(ua),
           blackberry:/\bblackberry\b/.test(ua),
-          ps4:/\bPlaystation 4\b/.test(ua),
-          vita:/\bPlaystation Vita\b/.test(ua),
+          ps4:/\bMozilla\/5.0 \(PlayStation 4\b/.test(ua),
+          vita:/\bMozilla\/5.0 \(PlayStation Vita\b/.test(ua),
           firefoxos:/\bFirefox\b/.test(ua) && /\Mobile\b/.test(ua)
         }
       }
