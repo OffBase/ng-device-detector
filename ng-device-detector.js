@@ -7,7 +7,8 @@ angular.module("ng.deviceDetector",[])
     SAFARI: "safari",
     OPERA: "opera",
     IE: "ie",
-    UNKNOWN: "unknown"
+    UNKNOWN: "unknown",
+    CVAMOBILE: "cvamobile"
 })
 .constant("DEVICES", {
     ANDROID: "android",
@@ -29,7 +30,7 @@ angular.module("ng.deviceDetector",[])
     UNIX: "unix",
     FIREFOXOS: "firefoxos",
     PS4: "ps4",
-    VITA: 'vita',
+    VITA: "vita",
     UNKNOWN: "unknown"
 })
 .service("detectUtils", ["deviceDetector", "DEVICES", "BROWSERS", "OS",
@@ -72,7 +73,8 @@ angular.module("ng.deviceDetector",[])
           firefox:/\Firefox\b/.test(ua),
           safari:/^((?!CriOS).)*\Safari\b.*$/.test(ua),
           opera:/\Opera\b/.test(ua),
-          ie:/\bMSIE\b/.test(ua) || /\Trident\b/.test(ua)
+          ie:/\bMSIE\b/.test(ua) || /\Trident\b/.test(ua),
+          cvamobile:/psdocs\-mobile/i.test(ua)
         },
         device:{
           android:/\bAndroid\b/.test(ua),
@@ -99,7 +101,8 @@ angular.module("ng.deviceDetector",[])
           (deviceInfo.raw.browser.opera ? BROWSERS.OPERA :
               (deviceInfo.raw.browser.chrome ? BROWSERS.CHROME :
                   (deviceInfo.raw.browser.firefox ? BROWSERS.FIREFOX :
-                      (deviceInfo.raw.browser.safari ? BROWSERS.SAFARI : BROWSERS.UNKNOWN))));
+                      (deviceInfo.raw.browser.cvamobile ? BROWSERS.CVAMOBILE :
+                          (deviceInfo.raw.browser.safari ? BROWSERS.SAFARI : BROWSERS.UNKNOWN)))));
       deviceInfo.device = deviceInfo.raw.device.android ? DEVICES.ANDROID :
           (deviceInfo.raw.device.iphone ? DEVICES.IPHONE :
               (deviceInfo.raw.device.ipad ? DEVICES.IPAD :
