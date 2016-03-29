@@ -98,10 +98,10 @@ angular.module("ng.deviceDetector",[])
                                 (deviceInfo.raw.os.vita ? OS.VITA :
                                     (deviceInfo.raw.os.firefoxos ? OS.FIREFOXOS : OS.UNKNOWN))))))));
       deviceInfo.browser = deviceInfo.raw.browser.ie ? BROWSERS.IE :
-          (deviceInfo.raw.browser.opera ? BROWSERS.OPERA :
-              (deviceInfo.raw.browser.chrome ? BROWSERS.CHROME :
-                  (deviceInfo.raw.browser.firefox ? BROWSERS.FIREFOX :
-                      (deviceInfo.raw.browser.cvamobile ? BROWSERS.CVAMOBILE :
+        (deviceInfo.raw.browser.cvamobile ? BROWSERS.CVAMOBILE :
+            (deviceInfo.raw.browser.opera ? BROWSERS.OPERA :
+                (deviceInfo.raw.browser.chrome ? BROWSERS.CHROME :
+                    (deviceInfo.raw.browser.firefox ? BROWSERS.FIREFOX :
                           (deviceInfo.raw.browser.safari ? BROWSERS.SAFARI : BROWSERS.UNKNOWN)))));
       deviceInfo.device = deviceInfo.raw.device.android ? DEVICES.ANDROID :
           (deviceInfo.raw.device.iphone ? DEVICES.IPHONE :
@@ -111,7 +111,7 @@ angular.module("ng.deviceDetector",[])
                         (deviceInfo.raw.device.ps4 ? DEVICES.PS4 :
                             (deviceInfo.raw.device.vita ? DEVICES.VITA :
                                 (deviceInfo.raw.device.firefoxos ? DEVICES.FIREFOXOS : DEVICES.UNKNOWN)))))));
-          
+
     return deviceInfo;
   }
 ])
